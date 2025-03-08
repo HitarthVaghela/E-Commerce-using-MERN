@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
 
 function App() {
-
+  // console.log("App is rendering");
   return (
     <Box minH={"100vh"}>
       <Navbar />
