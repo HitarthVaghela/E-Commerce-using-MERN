@@ -1,5 +1,6 @@
-import { Container, useColorModeValue } from '@chakra-ui/react';
-import React, { useState } from 'react'
+import { Container, useColorModeValue, VStack, Heading, Box, Input, Button } from '@chakra-ui/react';
+import React, { useState } from 'react';
+
 const CreatePage = () => {
   const [newProduct, setNewProduct] = useState({
     name: "",
@@ -9,51 +10,53 @@ const CreatePage = () => {
 
   const handleAppProduct = () => {
     console.log(newProduct);
-  }
+  };
+
   return (
-    <Container maxH={"Container.sm"}>
-      <Vstack
-      spacing={8}
-      >
-        <Heading as={"h1"} size={"2x1"} textAlign={"center"} mb={8}>
-        CreatePage
+    <Container maxW={"container.sm"}>
+      <VStack spacing={8}>
+        <Heading as={"h1"} size={"2xl"} textAlign={"center"} mb={8}>
+          CreatePage
         </Heading>
 
         <Box
-        w={"full"} bg={useColorModeValue("white", "gray.800")}
-        p={6} rounded={"lg"} shadow={"md"}
+          w={"full"}
+          bg={useColorModeValue("white", "gray.800")}
+          p={6}
+          rounded={"lg"}
+          shadow={"md"}
         >
           <VStack spacing={4}>
-          <Input
-          placeholder='Product Name'
-          name = 'name'
-          value={newProduct.name}
-          onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value})}
-          />
+            <Input
+              placeholder="Product Name"
+              name="name"
+              value={newProduct.name}
+              onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })}
+            />
 
-          <Input
-          placeholder='Price'
-          name = 'price'
-          type='number'
-          value={newProduct.price}
-          onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value})}
-          />
+            <Input
+              placeholder="Price"
+              name="price"
+              type="number"
+              value={newProduct.price}
+              onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })}
+            />
 
-          <Input
-          placeholder='Image URL'
-          name = 'image'
-          value={newProduct.image}
-          onChange={(e) => setNewProduct({ ...newProduct, image: e.target.value})}
-          />
+            <Input
+              placeholder="Image URL"
+              name="image"
+              value={newProduct.image}
+              onChange={(e) => setNewProduct({ ...newProduct, image: e.target.value })}
+            />
 
-          <Button colorScheme='blue' onClick={handleAppProduct} w='full'>
-            Add Product
-          </Button>
+            <Button colorScheme="blue" onClick={handleAppProduct} w="full">
+              Add Product
+            </Button>
           </VStack>
         </Box>
-      </Vstack>
+      </VStack>
     </Container>
-  )
+  );
 };
 
-export default CreatePage
+export default CreatePage;

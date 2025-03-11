@@ -4,9 +4,11 @@ import { PlusSquareIcon } from "@chakra-ui/icons";
 import { IoMoon } from "react-icons/io5";
 import { LuSun } from "react-icons/lu";
 import { Button, Container, Flex, HStack, Text, useColorMode } from "@chakra-ui/react";
+import { useProductStore } from '../store/product';
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const { products } = useProductStore()
 
   return (
     <Container maxW={"1140px"} px={4}>
