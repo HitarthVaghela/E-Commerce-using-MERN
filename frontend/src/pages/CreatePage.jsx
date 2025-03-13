@@ -1,5 +1,6 @@
 import { Container, useColorModeValue, VStack, Heading, Box, Input, Button } from '@chakra-ui/react';
 import React, { useState } from 'react';
+import { useProductStore } from '../store/product';
 
 const CreatePage = () => {
   const [newProduct, setNewProduct] = useState({
@@ -8,15 +9,19 @@ const CreatePage = () => {
     image: "",
   });
 
-  const handleAppProduct = () => {
-    console.log(newProduct);
+  const { createProducts } = useProductStore(); 
+  
+  const handleAppProduct = async () => { 
+    const { success, message } = await createProducts(newProduct); 
+    console.log("Success:", success);
+    console.log("Message:", message);
   };
 
   return (
     <Container maxW={"container.sm"}>
       <VStack spacing={8}>
         <Heading as={"h1"} size={"2xl"} textAlign={"center"} mb={8}>
-          CreatePage
+          Create Page
         </Heading>
 
         <Box
