@@ -131,7 +131,7 @@ const ProductCard = ({ product }) => {
 						<Button
 							colorScheme='blue'
 							mr={3}
-                            onClick={() => handleUpdateProduct(product._id, updatedProduct)}
+              onClick={() => handleUpdateProduct(product._id, updatedProduct)}
 						>
 							Update
 						</Button>

@@ -54,7 +54,7 @@ export const useProductStore = create((set) => ({
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify(updatedProduct),
+			body: JSON.stringify(updateProduct),
 		});
         const data = await res.json();
 		if (!data.success) return { success: false, message: data.message };
