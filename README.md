@@ -1,1 +1,1 @@
-# mern-practice
+# E-Commerce-using-MERN
